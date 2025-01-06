@@ -2,7 +2,7 @@ import Tooltip1 from './1_r'
 import Tooltip2 from './2_r'
 import Tooltip3 from './3_r'
 import Tooltip4 from './4_r'
-// import Tooltip5V from './5_v'
+import Tooltip5V from './5_v'
 import cx from './cx'
 
 const Tooltips = () => {
@@ -13,7 +13,7 @@ const Tooltips = () => {
       <Tooltip2 />
       <Tooltip3 />
       <Tooltip4 />
-      {/* <Tooltip5V /> */}
+      <Tooltip5V />
     </div>
   )
 }
