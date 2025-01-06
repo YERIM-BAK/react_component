@@ -1,8 +1,8 @@
 import TextBox1 from './1_r'
 import TextBox2 from './2_r'
 import TextBox3 from './3_r'
-// import TextBox4V from './4_v'
-// import TextBox5 from './5_r'
+import TextBox4V from './4_v'
+import TextBox5 from './5_r'
 import cx from './cx'
 
 const TextBoxes = () => {
@@ -12,8 +12,8 @@ const TextBoxes = () => {
       <TextBox1 />
       <TextBox2 />
       <TextBox3 />
-      {/* <TextBox4V />
-      <TextBox5 /> */}
+      <TextBox4V />
+      <TextBox5 />
     </div>
   )
 }
