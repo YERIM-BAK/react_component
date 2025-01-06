@@ -1,12 +1,14 @@
 import Accordions from './components/01_accordion'
 import TabMenus from './components/02_tabMenu'
 import Tooltips from './components/03_tooltip'
+import TextBoxes from './components/04_textBox'
 
 export const routePaths = [
   '/',
   '/accordion',
   '/tabMenu',
   '/tooltip',
+  '/textBox',
 ] as const
 export type ROUTE_PATH = (typeof routePaths)[number]
 
@@ -32,6 +34,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
       '/accordion',
       '/tabMenu',
       '/tooltip',
+      '/textBox',
     ],
   },
   '/accordion': {
@@ -51,6 +54,12 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     link: '/tooltip',
     name: '03. 툴팁',
     children: Tooltips,
+  },
+  '/textBox': {
+    key: '/textBox',
+    link: '/textBox',
+    name: '04. 반응형 텍스트박스',
+    children: TextBoxes,
   },
 }
 
