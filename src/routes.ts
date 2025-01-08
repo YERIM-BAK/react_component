@@ -4,6 +4,7 @@ import Tooltips from './components/03_tooltip'
 import TextBoxes from './components/04_textBox'
 import LineClamps from './components/05_lineClamp'
 import LazyLoad1 from './components/06_lazyLoading/1_r'
+import LazyLoad2V from './components/06_lazyLoading/2_v'
 
 export const routePaths = [
   '/',
@@ -14,6 +15,7 @@ export const routePaths = [
   '/lineClamp',
   '/lazyLoading',
   '/lazyLoading/1_r',
+  '/lazyLoading/2_v',
 ] as const
 export type ROUTE_PATH = (typeof routePaths)[number]
 
@@ -78,13 +80,19 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/lazyLoading',
     link: '/lazyLoading/1_r',
     name: '06. 지연 로딩',
-    children: ['/lazyLoading/1_r'],
+    children: ['/lazyLoading/1_r', '/lazyLoading/2_v',],
   },
   '/lazyLoading/1_r': {
     key: '/lazyLoading/1_r',
     link: '/lazyLoading/1_r',
     name: 'React1',
     children: LazyLoad1,
+  },
+  '/lazyLoading/2_v': {
+    key: '/lazyLoading/2_v',
+    link: '/lazyLoading/2_v',
+    name: 'Vanilla',
+    children: LazyLoad2V,
   },
 }
 
