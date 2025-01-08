@@ -3,6 +3,7 @@ import TabMenus from './components/02_tabMenu'
 import Tooltips from './components/03_tooltip'
 import TextBoxes from './components/04_textBox'
 import LineClamps from './components/05_lineClamp'
+import LazyLoad1 from './components/06_lazyLoading/1_r'
 
 export const routePaths = [
   '/',
@@ -11,6 +12,8 @@ export const routePaths = [
   '/tooltip',
   '/textBox',
   '/lineClamp',
+  '/lazyLoading',
+  '/lazyLoading/1_r',
 ] as const
 export type ROUTE_PATH = (typeof routePaths)[number]
 
@@ -38,6 +41,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
       '/tooltip',
       '/textBox',
       '/lineClamp',
+      '/lazyLoading',
     ],
   },
   '/accordion': {
@@ -69,6 +73,18 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     link: '/lineClamp',
     name: '05. 여러줄 말줄임',
     children: LineClamps,
+  },
+  '/lazyLoading': {
+    key: '/lazyLoading',
+    link: '/lazyLoading/1_r',
+    name: '06. 지연 로딩',
+    children: ['/lazyLoading/1_r'],
+  },
+  '/lazyLoading/1_r': {
+    key: '/lazyLoading/1_r',
+    link: '/lazyLoading/1_r',
+    name: 'React1',
+    children: LazyLoad1,
   },
 }
 
