@@ -5,6 +5,9 @@ import TextBoxes from './components/04_textBox'
 import LineClamps from './components/05_lineClamp'
 import LazyLoad1 from './components/06_lazyLoading/1_r'
 import LazyLoad2V from './components/06_lazyLoading/2_v'
+import LazyLoad3 from './components/06_lazyLoading/3_r'
+import InfiniteScrollR from './components/07_infiniteScroll/react'
+
 
 export const routePaths = [
   '/',
@@ -16,6 +19,9 @@ export const routePaths = [
   '/lazyLoading',
   '/lazyLoading/1_r',
   '/lazyLoading/2_v',
+  '/lazyLoading/3_r',
+  '/infiniteScroll',
+  '/infiniteScroll/react',
 ] as const
 export type ROUTE_PATH = (typeof routePaths)[number]
 
@@ -44,6 +50,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
       '/textBox',
       '/lineClamp',
       '/lazyLoading',
+      '/infiniteScroll',
     ],
   },
   '/accordion': {
@@ -80,7 +87,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/lazyLoading',
     link: '/lazyLoading/1_r',
     name: '06. 지연 로딩',
-    children: ['/lazyLoading/1_r', '/lazyLoading/2_v',],
+    children: ['/lazyLoading/1_r', '/lazyLoading/2_v', '/lazyLoading/3_r'],
   },
   '/lazyLoading/1_r': {
     key: '/lazyLoading/1_r',
@@ -93,6 +100,24 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     link: '/lazyLoading/2_v',
     name: 'Vanilla',
     children: LazyLoad2V,
+  },
+  '/lazyLoading/3_r': {
+    key: '/lazyLoading/3_r',
+    link: '/lazyLoading/3_r',
+    name: 'React3',
+    children: LazyLoad3,
+  },
+  '/infiniteScroll': {
+    key: '/infiniteScroll',
+    link: '/infiniteScroll/react',
+    name: '07. 무한 스크롤',
+    children: ['/infiniteScroll/react'],
+  },
+  '/infiniteScroll/react': {
+    key: '/infiniteScroll/react',
+    link: '/infiniteScroll/react',
+    name: 'React#1 - IO',
+    children: InfiniteScrollR,
   },
 }
 
