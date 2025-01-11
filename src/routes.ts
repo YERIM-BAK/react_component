@@ -7,7 +7,7 @@ import LazyLoad1 from './components/06_lazyLoading/1_r'
 import LazyLoad2V from './components/06_lazyLoading/2_v'
 import LazyLoad3 from './components/06_lazyLoading/3_r'
 import InfiniteScrollR from './components/07_infiniteScroll/react'
-
+import InfiniteScrollV from './components/07_infiniteScroll/vanilla'
 
 export const routePaths = [
   '/',
@@ -22,6 +22,7 @@ export const routePaths = [
   '/lazyLoading/3_r',
   '/infiniteScroll',
   '/infiniteScroll/react',
+  '/infiniteScroll/vanilla',
 ] as const
 export type ROUTE_PATH = (typeof routePaths)[number]
 
@@ -111,13 +112,19 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/infiniteScroll',
     link: '/infiniteScroll/react',
     name: '07. 무한 스크롤',
-    children: ['/infiniteScroll/react'],
+    children: ['/infiniteScroll/react', '/infiniteScroll/vanilla'],
   },
   '/infiniteScroll/react': {
     key: '/infiniteScroll/react',
     link: '/infiniteScroll/react',
     name: 'React#1 - IO',
     children: InfiniteScrollR,
+  },
+  '/infiniteScroll/vanilla': {
+    key: '/infiniteScroll/vanilla',
+    link: '/infiniteScroll/vanilla',
+    name: 'Vanilla',
+    children: InfiniteScrollV,
   },
 }
 
