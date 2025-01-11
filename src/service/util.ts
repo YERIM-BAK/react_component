@@ -19,7 +19,7 @@ export const randomize = ({
 }: { min: number; max: number; step: number; }) => {
   if (max < min || max - min < step) throw Error('wrong arguments')
   const num = Math.random() * (max - min) + min
-  return Math.round(num / step) * step;
+  return Math.floor(num / step) * step;
 }
 
 export const pickRandom = <T>({
