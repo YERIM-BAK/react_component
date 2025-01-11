@@ -1,3 +1,4 @@
+import { disconnect } from "process";
 import { RefObject, useEffect, useRef, useState } from "react";
 
 type Elem = Element | null
@@ -18,7 +19,7 @@ const useIntersectionObserver = (elemRef: RefObject<Elem>, options: Intersection
     }
   }, [elemRef, options])
 
-  return { entries, observerRef }
+  return { entries, disconnect: observerRef.current?.disconnect }
 }
 
 export default useIntersectionObserver
