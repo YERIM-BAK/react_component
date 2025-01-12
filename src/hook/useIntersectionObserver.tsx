@@ -1,16 +1,18 @@
-import { disconnect } from "process";
-import { RefObject, useEffect, useRef, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from 'react'
 
 type Elem = Element | null
 
-const useIntersectionObserver = (elemRef: RefObject<Elem>, options: IntersectionObserverInit) => {
+const useIntersectionObserver = (
+  elemRef: RefObject<Elem>,
+  options: IntersectionObserverInit = { threshold: 0 },
+) => {
   const observerRef = useRef<IntersectionObserver>()
   const [entries, setEntries] = useState<IntersectionObserverEntry[]>([])
 
   useEffect(() => {
     const node = elemRef.current
-
     if (!node) return
+
     observerRef.current = new IntersectionObserver(setEntries, options)
     observerRef.current.observe(node)
 
@@ -19,7 +21,10 @@ const useIntersectionObserver = (elemRef: RefObject<Elem>, options: Intersection
     }
   }, [elemRef, options])
 
-  return { entries, disconnect: observerRef.current?.disconnect }
+  return {
+    entries,
+    observerRef,
+  }
 }
 
 export default useIntersectionObserver
