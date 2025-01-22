@@ -9,6 +9,7 @@ import LazyLoad3 from './components/06_lazyLoading/3_r'
 import InfiniteScrollR from './components/07_infiniteScroll/react'
 import InfiniteScrollV from './components/07_infiniteScroll/vanilla'
 import ScrollBox from './components/08_scrollBox'
+import ScrollSpy1 from './components/09_scrollSpy/1_r'
 
 export const routePaths = [
   '/',
@@ -25,6 +26,8 @@ export const routePaths = [
   '/infiniteScroll/react',
   '/infiniteScroll/vanilla',
   '/scrollBox',
+  '/scrollSpy',
+  '/scrollSpy/1_r',
 ] as const
 export type ROUTE_PATH = (typeof routePaths)[number]
 
@@ -55,6 +58,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
       '/lazyLoading',
       '/infiniteScroll',
       '/scrollBox',
+      '/scrollSpy',
     ],
   },
   '/accordion': {
@@ -134,6 +138,18 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     link: '/scrollBox',
     name: '08. 횡 스크롤 박스',
     children: ScrollBox,
+  },
+  '/scrollSpy': {
+    key: '/scrollSpy',
+    link: '/scrollSpy/1_r',
+    name: '09. 스크롤 스파이',
+    children: ['/scrollSpy/1_r'],
+  },
+  '/scrollSpy/1_r': {
+    key: '/scrollSpy/1_r',
+    link: '/scrollSpy/1_r',
+    name: 'R - scroll',
+    children: ScrollSpy1,
   },
 }
 
